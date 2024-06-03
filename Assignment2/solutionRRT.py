@@ -61,7 +61,7 @@ def find_shortest_path(nodes, edges, start_config, goal_config):
 
     return shortest_path
 
-def visualize_tree(tree_file, shortest_path, start_config, goal_config):
+def visualize_tree(tree_file, shortest_path, start_config, goal_config, vis_mode='3D'):
     tree_data = read_yaml(tree_file)
 
     vis = meshcat.Visualizer().open()
@@ -72,6 +72,11 @@ def visualize_tree(tree_file, shortest_path, start_config, goal_config):
 
     # Visualize nodes
     for i, node in enumerate(nodes):
+        if vis_mode == '2D':
+            node_xy = [node[0], node[1], 0.0]  # Use only XY components
+        else:
+            node_xy = node  # Use full XYZ components
+
         if node in shortest_path:
             if node == start_config or node == goal_config:
                 vis[f'node_{i}'].set_object(g.Sphere(0.025), g.MeshLambertMaterial(color=0x00ff00))
@@ -79,12 +84,17 @@ def visualize_tree(tree_file, shortest_path, start_config, goal_config):
                 vis[f'node_{i}'].set_object(g.Sphere(0.025), g.MeshLambertMaterial(color=0xff0000))
         else:
             vis[f'node_{i}'].set_object(g.Sphere(0.025))
-        vis[f'node_{i}'].set_transform(tf.translation_matrix(node))
+        vis[f'node_{i}'].set_transform(tf.translation_matrix(node_xy))
 
     # Visualize edges
     for i, (start, end) in enumerate(edges):
         start_pos = np.array(nodes[start])
         end_pos = np.array(nodes[end])
+        
+        if vis_mode == '2D':
+            start_pos[2] = 0.0  # Set Z to 0 for visualization
+            end_pos[2] = 0.0  # Set Z to 0 for visualization
+            
         midpoint = (start_pos + end_pos) / 2
         length = np.linalg.norm(end_pos - start_pos)
 
@@ -114,6 +124,10 @@ def main(tree_file, config_file):
     start_config = config_data['motionplanning']['start']
     goal_config = config_data['motionplanning']['goal']
     
+    vis_mode = '3D'
+    if config_data['motionplanning']['type'] == 'car':
+        vis_mode = '2D'
+    
     # Initialize nodes and edges
     nodes_list = [Node(config) for config in tree_data['nodes']]
     edges_list = tree_data['edges']
@@ -123,7 +137,7 @@ def main(tree_file, config_file):
     print("Shortest path:", shortest_path)
 
     # Visualize the tree and highlight the shortest path
-    visualize_tree(tree_file, shortest_path, start_config, goal_config)
+    visualize_tree(tree_file, shortest_path, start_config, goal_config, vis_mode)
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:

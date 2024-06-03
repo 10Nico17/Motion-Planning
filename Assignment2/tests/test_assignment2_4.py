@@ -10,6 +10,7 @@ class TestAssignment2_3(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmpdirname:
             p_out = Path(tmpdirname) / "output.yaml"
 
+            print('file_in: ', file_in)
             subprocess.run(
                 ["python3",
                 "rrt.py",

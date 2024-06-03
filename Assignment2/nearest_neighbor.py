@@ -1,7 +1,6 @@
 import yaml
 import numpy as np
 import sys
-from scipy.spatial import distance
 
 class NearestNeighbor:
     def __init__(self, distance_metric):

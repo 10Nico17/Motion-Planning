@@ -1,0 +1,7 @@
+git add .
+git commit -m "New test"
+
+git tag -d assignment2       
+git push origin :refs/tags/assignment2   
+git tag assignment2 main     
+git push origin assignment2

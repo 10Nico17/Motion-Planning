@@ -38,3 +38,16 @@ python3 rrt.py cfg/arm_0.yaml arm_plan_0.yaml
 <div align="center">
   <img src="Assignment2/Test2.png" alt="License plate dataset"  width="640" height="480">
 </div>
+
+
+** Visu car kinodynamic motion planning**  
+
+
+<div align="center">
+  <img src="Assignment2/car_planning.png" alt="License plate dataset"  width="640" height="480">
+</div>
+
+
+<div align="center">
+  <img src="Assignment2/path_planning_car.png" alt="License plate dataset"  width="640" height="480">
+</div>
