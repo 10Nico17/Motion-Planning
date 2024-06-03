@@ -17,6 +17,8 @@ python3 arm_vis.py cfg/arm_env_0.yaml cfg/arm_plan_0.yaml
 python3 rrt.py cfg/arm_0.yaml arm_plan_0.yaml
 ```
 
+
+
 **Visualize tree and path**
 ```
  python3 solutionRRT.py tree_rrt.yaml cfg/arm_0.yaml
@@ -28,6 +30,12 @@ python3 rrt.py cfg/arm_0.yaml arm_plan_0.yaml
  python3 solutionRRT.py tree_rrt.yaml cfg/arm_0.yaml
 
 ```
+
+
+<div align="center">
+  <img src="Assignment2/arm_visu_env.png.png" alt="License plate dataset"  width="640" height="480">
+</div>
+
 
 
 <div align="center">
