@@ -1,0 +1,234 @@
+OMPL version 
+Experiment NO_NAME
+0 experiment properties
+Running on b10f32e5e512
+Starting at 2024-07-03 09:13:00
+<<<|
+Properties of the state space 'SE2CompoundSpace0'
+  - signature: 6 4 3 1 2 2 1 
+  - dimension: 3
+  - extent: 58.1393
+  - sanity checks for state space passed
+  - probability of valid states: 0.966
+  - average length of a valid motion: 19.9428
+  - average number of samples drawn per second: sampleUniform()=2.05617e+07 sampleUniformNear()=1.86968e+07 sampleGaussian()=7.6572e+06
+Settings for the state space 'SE2CompoundSpace0'
+  - state validity check resolution: 1%
+  - valid segment count factor: 1
+  - state space:
+Compound state space 'SE2CompoundSpace0' of dimension 3 (locked) [
+Real vector state space 'RealVectorSpace1' of dimension 2 with bounds: 
+  - min: -20 -20 
+  - max: 20 20 
+ of weight 1
+SO2 state space 'SO2Space2'
+ of weight 0.5
+]
+Registered projections:
+  - <default>
+Projection of dimension 2
+Cell sizes (computed defaults): [2 2]
+
+Declared parameters:
+longest_valid_segment_fraction = 0.01
+projection.cellsize.0 = 2
+projection.cellsize.1 = 2
+projection.cellsize_factor = 0
+valid_segment_count_factor = 1
+Valid state sampler named obstacle_based with parameters:
+nr_attempts = 100
+  - control space:
+Real vector control space 'RealVectorControl[SE2CompoundSpace0]' with bounds: 
+  - min: -0.5 -0.523599 
+  - max: 2 0.523599 
+  - can propagate backward: yes
+  - propagation step size: 0.1
+  - propagation duration: [1, 10]
+Start states:
+Compound state [
+RealVectorState [-15 0]
+SO2State [0]
+]
+Goal state, threshold = 2.22045e-16, memory address = 0x1197580, state = 
+Compound state [
+RealVectorState [15 0]
+SO2State [0]
+]
+Optimization Objective: Path Length @0x71895090f9a0
+Optimization Threshold: 0
+Average state cost: 0
+There are 0 solutions
+
+Properties of benchmarked planners:
+Planner Uniform_SST specs:
+Multithreaded:                 No
+Reports approximate solutions: Yes
+Can optimize solutions:        No
+Aware of the following parameters: goal_bias pruning_radius selection_radius
+Planner Gaussian_SST specs:
+Multithreaded:                 No
+Reports approximate solutions: Yes
+Can optimize solutions:        No
+Aware of the following parameters: goal_bias pruning_radius selection_radius
+Planner Bridge_SST specs:
+Multithreaded:                 No
+Reports approximate solutions: Yes
+Can optimize solutions:        No
+Aware of the following parameters: goal_bias pruning_radius selection_radius
+Planner Obstacle_SST specs:
+Multithreaded:                 No
+Reports approximate solutions: Yes
+Can optimize solutions:        No
+Aware of the following parameters: goal_bias pruning_radius selection_radius
+|>>>
+<<<|
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              12
+On-line CPU(s) list: 0-11
+Thread(s) per core:  2
+Core(s) per socket:  6
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               165
+Model name:          Intel(R) Core(TM) i7-10850H CPU @ 2.70GHz
+Stepping:            2
+CPU MHz:             4426.222
+CPU max MHz:         5100.0000
+CPU min MHz:         800.0000
+BogoMIPS:            5399.81
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            12288K
+NUMA node0 CPU(s):   0-11
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp vnmi pku ospke md_clear flush_l1d arch_capabilities
+|>>>
+18439240699653644836 is the random seed
+60 seconds per run
+2048 MB per run
+3 runs per planner
+729.28 seconds spent to collect the data
+1 enum type
+status|Unknown status|Invalid start|Invalid goal|Unrecognized goal type|Timeout|Approximate solution|Exact solution|Crash|Unknown status
+4 planners
+control_Uniform_SST
+8 common properties
+goal_bias = 0.1
+longest_valid_segment_fraction = 0.01
+projection.cellsize.0 = 2
+projection.cellsize.1 = 2
+projection.cellsize_factor = 0
+pruning_radius = 0.1
+selection_radius = 0.2
+valid_segment_count_factor = 1
+13 properties for each run
+approximate solution BOOLEAN
+correct solution BOOLEAN
+graph motions INTEGER
+graph states INTEGER
+memory REAL
+solution clearance REAL
+solution difference REAL
+solution length REAL
+solution segments INTEGER
+solved BOOLEAN
+status ENUM
+time REAL
+valid segment fraction REAL
+3 runs
+1; 1; 133489; 133491; 191.84; 0; 0.197921; 28.8; 45; 0; 5; 60.107; 0; 
+1; 1; 124131; 124133; 249.293; 0; 0.138505; 29.6; 49; 0; 5; 60.0504; 0; 
+1; 1; 127912; 127914; 313.648; 0; 0.214936; 26.7; 50; 0; 5; 60.0438; 0; 
+.
+control_Gaussian_SST
+8 common properties
+goal_bias = 0.1
+longest_valid_segment_fraction = 0.01
+projection.cellsize.0 = 2
+projection.cellsize.1 = 2
+projection.cellsize_factor = 0
+pruning_radius = 0.1
+selection_radius = 0.2
+valid_segment_count_factor = 1
+13 properties for each run
+approximate solution BOOLEAN
+correct solution BOOLEAN
+graph motions INTEGER
+graph states INTEGER
+memory REAL
+solution clearance REAL
+solution difference REAL
+solution length REAL
+solution segments INTEGER
+solved BOOLEAN
+status ENUM
+time REAL
+valid segment fraction REAL
+3 runs
+1; 1; 137406; 137408; 433.941; 0; 0.232164; 27.2; 46; 0; 5; 60.0948; 0; 
+1; 1; 127860; 127862; 493.27; 0; 0.369518; 27; 42; 0; 5; 60.0435; 0; 
+1; 1; 126042; 126044; 555.168; 0; 0.356452; 29.6; 53; 0; 5; 60.004; 0; 
+.
+control_Bridge_SST
+8 common properties
+goal_bias = 0.1
+longest_valid_segment_fraction = 0.01
+projection.cellsize.0 = 2
+projection.cellsize.1 = 2
+projection.cellsize_factor = 0
+pruning_radius = 0.1
+selection_radius = 0.2
+valid_segment_count_factor = 1
+13 properties for each run
+approximate solution BOOLEAN
+correct solution BOOLEAN
+graph motions INTEGER
+graph states INTEGER
+memory REAL
+solution clearance REAL
+solution difference REAL
+solution length REAL
+solution segments INTEGER
+solved BOOLEAN
+status ENUM
+time REAL
+valid segment fraction REAL
+3 runs
+1; 1; 146451; 146453; 683.691; 0; 0.0580905; 29.2; 48; 0; 5; 60.1079; 0; 
+1; 1; 122964; 122966; 735.805; 0; 0.342585; 33.4; 52; 0; 5; 60.0602; 0; 
+1; 1; 116869; 116871; 790.285; 0; 0.262367; 26.4; 46; 0; 5; 60.0031; 0; 
+.
+control_Obstacle_SST
+8 common properties
+goal_bias = 0.1
+longest_valid_segment_fraction = 0.01
+projection.cellsize.0 = 2
+projection.cellsize.1 = 2
+projection.cellsize_factor = 0
+pruning_radius = 0.1
+selection_radius = 0.2
+valid_segment_count_factor = 1
+13 properties for each run
+approximate solution BOOLEAN
+correct solution BOOLEAN
+graph motions INTEGER
+graph states INTEGER
+memory REAL
+solution clearance REAL
+solution difference REAL
+solution length REAL
+solution segments INTEGER
+solved BOOLEAN
+status ENUM
+time REAL
+valid segment fraction REAL
+3 runs
+1; 1; 132805; 132807; 906.48; 0; 0.20222; 32.5; 49; 0; 5; 60.0652; 0; 
+1; 1; 116125; 116127; 957.363; 0; 0.335944; 29.9; 48; 0; 5; 60.0224; 0; 
+1; 1; 118350; 118352; 1016.42; 0; 0.305952; 34.6; 61; 0; 5; 60.0835; 0; 
+.

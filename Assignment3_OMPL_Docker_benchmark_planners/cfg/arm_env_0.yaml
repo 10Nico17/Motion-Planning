@@ -1,0 +1,12 @@
+environment:
+  min: [-3, -3, 0] # x, y, z
+  max: [3, 3, 1] # x, y, z
+  obstacles:
+    - type: box
+      pos: [-1.8, 1.6, 0]        # translation (of center of box)
+      size: [0.5, 1.0, 0.25]
+    - type: cylinder
+      pos: [2.5, 0, 0]  # translation (center of cylinder)
+      q: [1, 0, 0, 0] # rotation as quaternion w, x, y, z format
+      r: 0.1          # radius
+      lz: 1.0         # length around z
