@@ -18,6 +18,18 @@ python3 car_vis.py cfg/car_env_0.yaml cfg/car_plan_0.yaml
 python3 collision.py cfg/car_env_0.yaml cfg/car_plan_0.yaml output.yaml
 ```
 
+<div align="center">
+  <img src="Assignment1_FCL/arm1.png" alt="License plate dataset"  width="640" height="480">
+</div>
+
+
+
+<div align="center">
+  <img src="Assignment1_FCL/car1.png" alt="License plate dataset"  width="640" height="480">
+</div>
+
+
+
 
 
 # 2. RRT, Nearest neighbour, Tree Search
