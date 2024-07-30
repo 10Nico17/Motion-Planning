@@ -1,61 +1,102 @@
-# 1. Env:  
-** Visu robot arm three joints in XY-plane**  
+# Overview
+
+
+# 1. FCL Libary collision checking
+
+- 3 joint manipulator
+- kinodynamic car
 
 ```
 python3 arm_vis.py cfg/arm_env_0.yaml cfg/arm_plan_0.yaml
 ```
 
-<div align="center">
-  <img src="Assignment2/arm_visu.png" alt="License plate dataset"  width="640" height="480">
-</div>
+```
+python3 car_vis.py cfg/car_env_0.yaml cfg/car_plan_0.yaml
+```
 
-# Example:   
-**2. RRT motion planning for robot arm from start to goal configuration in C-space with collision checking :**  
+```
+python3 collision.py cfg/car_env_0.yaml cfg/car_plan_0.yaml output.yaml
+```
 
-**Start RRT**
+
+
+# 2. RRT 
+
+- RRT for arm and car
+
 ```
 python3 rrt.py cfg/arm_0.yaml arm_plan_0.yaml
 ```
 
+<div align="center">
+  <img src="Assignment2_RRT/arm_plan.png" alt="License plate dataset"  width="640" height="480">
+</div>
 
 
-**Visualize tree and path**
+<div align="center">
+  <img src="Assignment2_RRT/arm_plan2.png" alt="License plate dataset"  width="640" height="480">
+</div>
+
+
+<div align="center">
+  <img src="Assignment2_RRT/car_plan.png" alt="License plate dataset"  width="640" height="480">
+</div>
+
+
+
+
+# 3. OMPL, benchmark planner, Sampling (Gaussian, Bridge, Uniform, Obstacle)
+
 ```
- python3 solutionRRT.py tree_rrt.yaml cfg/arm_0.yaml
-
+docker run --rm -v ${PWD}:/home/ompl -P kavrakilab/omplapp python3 script.py
 ```
 
-**Verify that all configs are collision free**
 ```
- python3 solutionRRT.py tree_rrt.yaml cfg/arm_0.yaml
-
+python3 ompl_planner.py cfg/arm_0.yaml arm_plan_0.yaml
 ```
 
+```
+python3 ompl_planner.py cfg/car_0.yaml car_plan_0.yaml
+```
+
+```
+python3 ompl_benchmark.py cfg/car_1.yaml car_1.log
+```
+
+
+
+# 4. SVM, Bezier Curves, Differential flatness, Optimization (cvxpy)
+
+```
+python3 opt_safe.py cfg/bezier_0.yaml bezier_0.pdf
+```
+
+```
+python3 opt_safe.py cfg/bezier_0.yaml bezier_0.pdf --export-car bezier_car_plan_0.yaml
+```
+
+
+```
+python3 opt_safe.py cfg/bezier_0.yaml bezier_0.pdf --export-arm bezier_arm_plan_0.yaml
+```
+
 
 <div align="center">
-  <img src="Assignment2/arm_visu_env.png.png" alt="License plate dataset"  width="640" height="480">
+  <img src="Assignment4_SVM_Bezier_Curves_Differential_Flatness/svm_bezier1.png" alt="License plate dataset"  width="640" height="480">
+</div>
+
+
+<div align="center">
+  <img src="Assignment4_SVM_Bezier_Curves_Differential_Flatness/svm_bezier2.png" alt="License plate dataset"  width="640" height="480">
 </div>
 
 
 
-<div align="center">
-  <img src="Assignment2/Test1.png" alt="License plate dataset"  width="640" height="480">
-</div>
 
 
-<div align="center">
-  <img src="Assignment2/Test2.png" alt="License plate dataset"  width="640" height="480">
-</div>
 
 
-** Visu car kinodynamic motion planning**  
 
 
-<div align="center">
-  <img src="Assignment2/car_planning.png" alt="License plate dataset"  width="640" height="480">
-</div>
 
 
-<div align="center">
-  <img src="Assignment2/path_planning_car.png" alt="License plate dataset"  width="640" height="480">
-</div>
