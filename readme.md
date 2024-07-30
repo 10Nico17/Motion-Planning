@@ -22,7 +22,7 @@ python3 collision.py cfg/car_env_0.yaml cfg/car_plan_0.yaml output.yaml
 
 # 2. RRT, Nearest neighbour, Tree Search
 
-- RRT for arm and car
+- Geometric planning RRT manipulator:
 
 ```
 python3 rrt.py cfg/arm_0.yaml arm_plan_0.yaml
@@ -36,6 +36,9 @@ python3 rrt.py cfg/arm_0.yaml arm_plan_0.yaml
 <div align="center">
   <img src="Assignment2_RRT/arm_plan2.png" alt="License plate dataset"  width="640" height="480">
 </div>
+
+
+- Kinodynamic planning RRT car:
 
 
 <div align="center">
