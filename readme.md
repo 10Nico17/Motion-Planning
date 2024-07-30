@@ -20,7 +20,7 @@ python3 collision.py cfg/car_env_0.yaml cfg/car_plan_0.yaml output.yaml
 
 
 
-# 2. RRT 
+# 2. RRT, Nearest neighbour, Tree Search
 
 - RRT for arm and car
 
@@ -62,6 +62,15 @@ python3 ompl_planner.py cfg/car_0.yaml car_plan_0.yaml
 ```
 python3 ompl_benchmark.py cfg/car_1.yaml car_1.log
 ```
+
+<div align="center">
+  <img src="Assignment3_OMPL_Docker_benchmark_planners/benchmark1.png" alt="License plate dataset"  width="640" height="480">
+</div>
+
+
+<div align="center">
+  <img src="Assignment3_OMPL_Docker_benchmark_planners/benchmark2.png" alt="License plate dataset"  width="640" height="480">
+</div>
 
 
 
